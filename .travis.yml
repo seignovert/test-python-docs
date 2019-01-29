@@ -1,0 +1,19 @@
+language: python
+cache: pip
+
+python: 3.6
+
+test:
+    install: pip install tox-travis python-coveralls
+    script: tox
+    after_success: coveralls
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep-history: true
+  local-dir: .tox/docs/_build
+  committer-from-gh: true
+#   on:
+#     tags: true
