@@ -15,19 +15,24 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
-
+from configparser import ConfigParser
+from os import path
 
 # -- Project information -----------------------------------------------------
 
-project = 'Foo'
-copyright = '2019, Benoit Seignovert'
-author = 'Benoit Seignovert'
+def setup_cfg(fname='setup.cfg'):
+    cfg = path.abspath(path.join(path.dirname(__file__), '..', fname))
+    if not path.exists(cfg):
+        raise IOError(f'`{fname}` can not be located at the root of the project.')
+    return cfg
 
-# The short X.Y version
-version = '3.4'
-# The full version, including alpha/beta/rc tags
-release = '0.1.2-dev'
+parser = ConfigParser()
+parser.read(setup_cfg())
+metadata = dict(parser.items('metadata'))
 
+project = metadata['name'].replace('-',' ').title()
+author = metadata['author']
+copyright = metadata['copyright_date'] + ', ' + author
 
 # -- General configuration ---------------------------------------------------
 
@@ -39,6 +44,7 @@ release = '0.1.2-dev'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'pbr.sphinxext',
     'sphinx.ext.autodoc',
     'sphinx.ext.viewcode',
     'sphinx.ext.githubpages',
@@ -99,81 +105,3 @@ html_theme = 'sphinx_rtd_theme'
 # 'searchbox.html']``.
 #
 # html_sidebars = {}
-
-
-# -- Options for HTMLHelp output ---------------------------------------------
-
-# Output file base name for HTML help builder.
-htmlhelp_basename = 'foo-docs'
-
-
-# -- Options for LaTeX output ------------------------------------------------
-
-latex_elements = {
-    # The paper size ('letterpaper' or 'a4paper').
-    #
-    # 'papersize': 'letterpaper',
-
-    # The font size ('10pt', '11pt' or '12pt').
-    #
-    # 'pointsize': '10pt',
-
-    # Additional stuff for the LaTeX preamble.
-    #
-    # 'preamble': '',
-
-    # Latex figure (float) alignment
-    #
-    # 'figure_align': 'htbp',
-}
-
-# Grouping the document tree into LaTeX files. List of tuples
-# (source start file, target name, title,
-#  author, documentclass [howto, manual, or own class]).
-latex_documents = [
-    (master_doc, 'foo-docs.tex', 'Foo Documentation',
-     'Benoit Seignovert', 'manual'),
-]
-
-
-# -- Options for manual page output ------------------------------------------
-
-# One entry per manual page. List of tuples
-# (source start file, name, description, authors, manual section).
-man_pages = [
-    (master_doc, 'foo-docs', 'Foo Documentation',
-     [author], 1)
-]
-
-
-# -- Options for Texinfo output ----------------------------------------------
-
-# Grouping the document tree into Texinfo files. List of tuples
-# (source start file, target name, title, author,
-#  dir menu entry, description, category)
-texinfo_documents = [
-    (master_doc, 'foo-docs', 'Foo Documentation',
-     author, 'foo-docs', 'One line description of project.',
-     'Miscellaneous'),
-]
-
-
-# -- Options for Epub output -------------------------------------------------
-
-# Bibliographic Dublin Core info.
-epub_title = project
-
-# The unique identifier of the text. This can be a ISBN number
-# or the project homepage.
-#
-# epub_identifier = ''
-
-# A unique identification for the text.
-#
-# epub_uid = ''
-
-# A list of files that should not be packed into the epub file.
-epub_exclude_files = ['search.html']
-
-
-# -- Extension configuration -------------------------------------------------
