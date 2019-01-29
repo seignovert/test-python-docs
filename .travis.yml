@@ -16,5 +16,5 @@ deploy:
   github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
   keep-history: true
   local-dir: .tox/docs/_build
-#  on:
-#    tags: true
+  on:
+    tags: true
