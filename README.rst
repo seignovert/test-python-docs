@@ -1,7 +1,7 @@
 Test Python Docs
 =================
 
-|Build| |Coverage| |Docs| |License|
+|Build| |Coverage| |Docs| |Github| |License|
 
 .. |Build| image:: https://api.travis-ci.org/seignovert/test-python-docs.svg?branch=master
            :target: https://travis-ci.org/seignovert/test-python-docs
