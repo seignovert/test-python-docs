@@ -23,12 +23,7 @@ from configparser import ConfigParser
 def setup_cfg(fname='setup.cfg'):
     cfg = path.abspath(path.join(path.dirname(__file__), '..', fname))
     if not path.exists(cfg):
-        #> TMP
-        import os
-        print(os.getcwd())
-        print(os.listdir())
-        #< TMP
-        raise IOError('`{}` can not be located at the root of the project.'.format(fname))
+        raise FileNotFoundError('`{}` can not be located at the root of the project.'.format(fname))
     return cfg
 
 parser = ConfigParser()
@@ -51,6 +46,9 @@ copyright = metadata['copyright_date'] + ', ' + author
 extensions = [
     'pbr.sphinxext',
     'sphinx.ext.autodoc',
+    'sphinx.ext.napoleon',
+    'sphinx.ext.doctest',
+    'sphinx.ext.coverage',
     'sphinx.ext.viewcode',
     'sphinx.ext.githubpages',
 ]
