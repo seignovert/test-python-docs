@@ -3,29 +3,19 @@ cache: pip
 
 python: 3.6
 
-stages:
-  - name: test
-  - name: deploy
+install:
+  - pip install tox-travis python-coveralls
+script:
+  - tox
+after_success:
+  - coveralls
 
-jobs:
-  include:
-    - stage: test
-      install:
-        - pip install tox-travis python-coveralls
-      script:
-        - tox
-      after_success:
-        - coveralls
-
-    - stage: deploy
-      install: skip
-      script: skip
-      deploy:
-        provider: pages
-        skip-cleanup: true
-        github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
-        keep-history: true
-        local-dir: .tox/docs/_build
-        committer-from-gh: true
-#       on:
-#         tags: true
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep-history: true
+  local-dir: .tox/docs/_build
+  committer-from-gh: true
+#  on:
+#    tags: true
