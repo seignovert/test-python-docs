@@ -1,0 +1,10 @@
+.tox
+.coverage
+*.egg-info
+build/
+dist/
+htmlcov/
+__pycache__/
+AUTHORS
+Changelog
+docs/_build
