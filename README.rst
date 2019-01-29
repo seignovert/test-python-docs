@@ -19,3 +19,15 @@ Test Python Docs
              :target: https://github.com/seignovert/test-python-docs/
 
 Build docs with `sphinx` for `Github pages <https://github.com/seignovert/test-python-docs/>`_.
+
+
+ReadTheDocs advanced settings
+-----------------------------
+
+.. parsed-literal::
+
+    Requirements-files: `docs-requirements.txt`
+    Python configuration file: `Python configuration file:`
+    Default branch: `master`
+    Default version: `stable`
+    Python interpreter: CPython 3.x
