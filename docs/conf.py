@@ -15,15 +15,20 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
-from configparser import ConfigParser
 from os import path
+from configparser import ConfigParser
 
 # -- Project information -----------------------------------------------------
 
 def setup_cfg(fname='setup.cfg'):
     cfg = path.abspath(path.join(path.dirname(__file__), '..', fname))
     if not path.exists(cfg):
-        raise IOError(f'`{fname}` can not be located at the root of the project.')
+        #> TMP
+        import os
+        print(os.getcwd())
+        print(os.listdir())
+        #< TMP
+        raise IOError('`{}` can not be located at the root of the project.'.format(fname))
     return cfg
 
 parser = ConfigParser()
