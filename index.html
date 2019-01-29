@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Test Python Docs &mdash; Foo Docs 1.2.0 documentation</title>
+  <title>Test Python Docs &mdash; Foo Docs 1.3.0 documentation</title>
   
 
   
@@ -56,7 +56,7 @@
             
             
               <div class="version">
-                1.2.0
+                1.3.0
               </div>
             
           
@@ -84,6 +84,7 @@
               <div class="local-toc"><ul>
 <li><a class="reference internal" href="#">Test Python Docs</a><ul>
 <li><a class="reference internal" href="#readthedocs-advanced-settings">ReadTheDocs advanced settings</a></li>
+<li><a class="reference internal" href="#content">Content</a></li>
 </ul>
 </li>
 </ul>
@@ -152,17 +153,53 @@
             
   <div class="section" id="test-python-docs">
 <h1>Test Python Docs<a class="headerlink" href="#test-python-docs" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://travis-ci.org/seignovert/test-python-docs"><img alt="Build" src="https://api.travis-ci.org/seignovert/test-python-docs.svg?branch=master" /></a> <a class="reference external" href="https://coveralls.io/github/seignovert/test-python-docs"><img alt="Coverage" src="https://coveralls.io/repos/github/seignovert/test-python-docs/badge.svg?branch=master" /></a> <a class="reference external" href="https://test-python-docs.readthedocs.io/"><img alt="Docs" src="https://readthedocs.org/projects/test-python-docs/badge/?version=latest" /></a> <a class="reference external" href="https://seignovert.github.io/test-python-docs/"><img alt="Github" src="https://img.shields.io/badge/docs-github.io-blue.svg" /></a> <a class="reference external" href="https://github.com/seignovert/test-python-docs/"><img alt="License" src="https://img.shields.io/github/license/seignovert/test-python-docs.svg" /></a></p>
-<p>Build docs with <cite>sphinx</cite> for <a class="reference external" href="https://github.com/seignovert/test-python-docs/">Github pages</a>.</p>
+<p><a class="reference external" href="https://travis-ci.org/seignovert/test-python-docs"><img alt="Build" src="https://api.travis-ci.org/seignovert/test-python-docs.svg?branch=master" /></a> <a class="reference external" href="https://coveralls.io/github/seignovert/test-python-docs"><img alt="Coverage" src="https://coveralls.io/repos/github/seignovert/test-python-docs/badge.svg?branch=master" /></a> <a class="reference external" href="https://readthedocs.org/projects/test-python-docs/"><img alt="Docs" src="https://readthedocs.org/projects/test-python-docs/badge/?version=latest" /></a> <a class="reference external" href="https://test-python-docs.readthedocs.io/"><img alt="RTD" src="https://img.shields.io/badge/docs-readthedocs.io-blue.svg" /></a> <a class="reference external" href="https://seignovert.github.io/test-python-docs/"><img alt="Github" src="https://img.shields.io/badge/docs-github.io-blue.svg" /></a> <a class="reference external" href="https://github.com/seignovert/test-python-docs/"><img alt="License" src="https://img.shields.io/github/license/seignovert/test-python-docs.svg" /></a></p>
+<p>Build docs with <code class="docutils literal notranslate"><span class="pre">Sphinx</span></code> for
+<a class="reference external" href="https://test-python-docs.readthedocs.io/">Read the Docs</a>
+and
+<a class="reference external" href="https://seignovert.github.io/test-python-docs/">Github Pages</a>.</p>
 <div class="section" id="readthedocs-advanced-settings">
 <h2>ReadTheDocs advanced settings<a class="headerlink" href="#readthedocs-advanced-settings" title="Permalink to this headline">¶</a></h2>
 <pre class="literal-block">
-Requirements-files: <cite>docs-requirements.txt</cite>
-Python configuration file: <cite>Python configuration file:</cite>
+Install project in virtualenv: checked
+Requirements-files: <code class="docutils literal notranslate"><span class="pre">docs-requirements.txt</span></code>
+Python configuration file: <code class="docutils literal notranslate"><span class="pre">docs/conf.py</span></code>
 Default branch: <cite>master</cite>
 Default version: <cite>stable</cite>
 Python interpreter: CPython 3.x
 </pre>
+</div>
+<div class="section" id="content">
+<h2>Content<a class="headerlink" href="#content" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-foo"></span><dl class="function">
+<dt id="foo.foo">
+<code class="descclassname">foo.</code><code class="descname">foo</code><span class="sig-paren">(</span><em>dummy</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/foo.html#foo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#foo.foo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Foo function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dummy</strong> (<em>str</em>) – Dummy parameter</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Foo string</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<p>Examples should be written in doctest format, and should illustrate how
+to use the function.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">foo</span><span class="p">(</span><span class="s1">&#39;dummy&#39;</span><span class="p">))</span>
+<span class="go">foo</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Test note in docstring</p>
+</div>
+</dd></dl>
+
 </div>
 </div>
 
