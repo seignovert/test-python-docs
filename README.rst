@@ -34,7 +34,7 @@ ReadTheDocs advanced settings
 
     Install project in virtualenv: checked
     Requirements-files: ``docs-requirements.txt``
-    Python configuration file: ``Python configuration file:``
+    Python configuration file: ``docs/conf.py``
     Default branch: `master`
     Default version: `stable`
     Python interpreter: CPython 3.x
