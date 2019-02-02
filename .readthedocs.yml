@@ -3,10 +3,8 @@ version: 2
 python:
   version: 3.6
   install:
-      - requirements: ['requirements.txt', 'docs/requirements.txt']
-      - method: setuptools
-        path: .
-   system_packages: true
+      - requirements: requirements.txt'
+      - requirements: docs/requirements.txt'
 
 sphinx:
   builder: html
