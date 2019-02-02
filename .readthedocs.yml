@@ -1,13 +1,14 @@
 version: 2
 
+build:
+    image: latest
+    
 python:
   version: 3.6
+  setup_py_install: true
   install:
-      - requirements: requirements.txt
-      - requirements: docs/requirements.txt
-      - method: setuptools
-        path: .
-   system_packages: true
+      - requirements: requirements.txt'
+      - requirements: docs/requirements.txt'
 
 sphinx:
   builder: html

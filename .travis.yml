@@ -3,6 +3,10 @@ cache: pip
 
 python: 3.6
 
+env:
+  - TOX="tests"
+  - TOX="docs"
+
 install:
   - pip install tox-travis python-coveralls
 script:
