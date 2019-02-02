@@ -21,9 +21,10 @@ Test Python Docs
 .. |License| image:: https://img.shields.io/github/license/seignovert/test-python-docs.svg
              :target: https://github.com/seignovert/test-python-docs/
 
-See `.readthedocs.yml <.readthedocs.yml>`_ and
-`.travis-ci.yml <.travis-ci.yml>`_ files
-to learn how to deploy ``Sphinx`` doc build to
+See `.readthedocs.yml <.readthedocs.yml>`_
+to see how to deploy to
 `Read the Docs <https://test-python-docs.readthedocs.io/>`_
-and
+
+See `.travis-ci.yml <.travis-ci.yml>`_
+files to see how to tests and build the docs and deploy it to
 `Github Pages <https://seignovert.github.io/test-python-docs/>`_.
