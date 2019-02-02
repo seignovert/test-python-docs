@@ -21,4 +21,5 @@ def foo(dummy):
     return 'foo'
 
 def bar():
-    return 'bar'
+    bar = 'bar'
+    return f"{bar}"
