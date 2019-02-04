@@ -1,28 +1,28 @@
 Test Python Docs
 =================
 
-|Docs| |RTD| |Build| |Coverage| |Github| |Tag| |License|
+|Docs| |RTD| |Build| |Coverage| |Github| |License| |Tag|
 
-.. |Docs| image:: https://readthedocs.org/projects/test-python-docs/badge/?version=latest
+.. |Docs| image:: 	https://img.shields.io/readthedocs/test-python-docs.svg?logo=read-the-docs&logoColor=white
           :target: https://readthedocs.org/projects/test-python-docs/
 
-.. |RTD| image:: https://img.shields.io/badge/docs-readthedocs.io-blue.svg
+.. |RTD| image:: https://img.shields.io/badge/readthedocs.io-test--python--docs-blue.svg?logo=read-the-docs&logoColor=white
           :target: https://test-python-docs.readthedocs.io/
 
-.. |Build| image:: https://api.travis-ci.org/seignovert/test-python-docs.svg?branch=master
+.. |Build| image:: 	https://img.shields.io/travis/seignovert/test-python-docs.svg?logo=travis-ci&logoColor=white
            :target: https://travis-ci.org/seignovert/test-python-docs
 
-.. |Coverage| image:: https://coveralls.io/repos/github/seignovert/test-python-docs/badge.svg?branch=master
+.. |Coverage| image:: https://img.shields.io/coveralls/github/seignovert/test-python-docs.svg?logo=travis-ci&logoColor=white
               :target: https://coveralls.io/github/seignovert/test-python-docs
 
-.. |Github| image:: https://img.shields.io/badge/docs-github.io-blue.svg
+.. |Github| image:: https://img.shields.io/badge/github.io-test--python--docs-blue.svg?logo=github&logoColor=white
           :target: https://seignovert.github.io/test-python-docs/
 
-.. |Tag| image:: https://img.shields.io/github/tag/seignovert/test-python-docs.svg
-          :target: https://github.com/seignovert/test-python-docs/releases
-
-.. |License| image:: https://img.shields.io/github/license/seignovert/test-python-docs.svg
+.. |License| image:: https://img.shields.io/github/license/seignovert/test-python-docs.svg?logo=github&logoColor=white
              :target: https://github.com/seignovert/test-python-docs/
+
+.. |Tag| image:: https://img.shields.io/github/tag/seignovert/test-python-docs.svg?logo=github&logoColor=white
+          :target: https://github.com/seignovert/test-python-docs/releases
 
 See `.readthedocs.yml <.readthedocs.yml>`_
 to see how to deploy to
