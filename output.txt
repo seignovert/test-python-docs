@@ -1,17 +1,17 @@
-Results of doctest builder run on 2019-02-02 04:28:15
+Results of doctest builder run on 2019-02-04 23:53:48
 =====================================================
 
 Document: index
 ---------------
 1 items passed all tests:
-   1 tests in default
-1 tests in 1 items.
-1 passed and 0 failed.
+   2 tests in default
+2 tests in 1 items.
+2 passed and 0 failed.
 Test passed.
 
 Doctest summary
 ===============
-    1 test
+    2 tests
     0 failures in tests
     0 failures in setup code
     0 failures in cleanup code
