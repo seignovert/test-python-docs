@@ -18,10 +18,10 @@ Test Python Docs
 .. |Github| image:: https://img.shields.io/badge/github.io-test--python--docs-blue.svg?logo=github&logoColor=white
           :target: https://seignovert.github.io/test-python-docs/
 
-.. |License| image:: https://img.shields.io/github/license/seignovert/test-python-docs.svg?logo=github&logoColor=white
+.. |License| image:: https://img.shields.io/github/license/seignovert/test-python-docs.svg
              :target: https://github.com/seignovert/test-python-docs/
 
-.. |Tag| image:: https://img.shields.io/github/tag/seignovert/test-python-docs.svg?logo=github&logoColor=white
+.. |Tag| image:: https://img.shields.io/github/tag/seignovert/test-python-docs.svg
           :target: https://github.com/seignovert/test-python-docs/releases
 
 See `.readthedocs.yml <.readthedocs.yml>`_
