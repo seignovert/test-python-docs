@@ -1,7 +1,7 @@
 Test Python Docs
 =================
 
-|Docs| |RTD| |Build| |Coverage| |Github| |License|
+|Docs| |RTD| |Build| |Coverage| |Github| |Tag| |License|
 
 .. |Docs| image:: https://readthedocs.org/projects/test-python-docs/badge/?version=latest
           :target: https://readthedocs.org/projects/test-python-docs/
@@ -17,6 +17,9 @@ Test Python Docs
 
 .. |Github| image:: https://img.shields.io/badge/docs-github.io-blue.svg
           :target: https://seignovert.github.io/test-python-docs/
+
+.. |Tag| image:: https://img.shields.io/github/tag/seignovert/test-python-docs.svg
+          :target: https://github.com/seignovert/test-python-docs/releases
 
 .. |License| image:: https://img.shields.io/github/license/seignovert/test-python-docs.svg
              :target: https://github.com/seignovert/test-python-docs/
