@@ -9,7 +9,7 @@ help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
 livehtml:
-	sphinx-autobuild $(SOURCEDIR) $(SPHINXOPTS) $(BUILDDIR)/html --watch . --watch ../$(PACKAGE)/
+	sphinx-autobuild $(SOURCEDIR) $(SPHINXOPTS) $(BUILDDIR)/html --ignore "$(BUILDDIR)/*" --watch . --watch ../$(PACKAGE)/ 
 
 .PHONY: help livehtml Makefile
 
