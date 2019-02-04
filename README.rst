@@ -31,3 +31,18 @@ to see how to deploy to
 See `.travis-ci.yml <.travis-ci.yml>`_
 files to see how to tests and build the docs and deploy it to
 `Github Pages <https://seignovert.github.io/test-python-docs/>`_.
+
+Sphinx autobuild
+----------------
+
+Install:
+
+.. code:: bash
+
+    $ pip install -r docs/requirements.txt
+
+Start autobuild:
+
+.. code:: bash
+
+    $ make livehtml

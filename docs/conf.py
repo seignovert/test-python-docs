@@ -12,18 +12,17 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
-from os import path
+import os
+import sys
+sys.path.insert(0, os.path.abspath('..'))
 from configparser import ConfigParser
 
 # -- Project information -----------------------------------------------------
 
 def setup_cfg(fname='setup.cfg'):
-    cfg = path.abspath(path.join(path.dirname(__file__), '..', fname))
-    if not path.exists(cfg):
-        raise FileNotFoundError('`{}` can not be located at the root of the project.'.format(fname))
+    cfg = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', fname))
+    if not os.path.exists(cfg):
+        raise FileNotFoundError(f'`{fname}` can not be located at the root of the project.')
     return cfg
 
 parser = ConfigParser()
