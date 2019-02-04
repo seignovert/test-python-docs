@@ -11,8 +11,8 @@ def foo(dummy):
         Examples should be written in doctest format, and should illustrate how
         to use the function.
 
-        >>> print(foo('dummy'))
-        foo
+        >>> foo('dummy')
+        'foo'
 
     Note:
         Test note in docstring

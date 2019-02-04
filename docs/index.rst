@@ -1,11 +1,19 @@
 .. include:: ../README.rst
 
-Content
--------
-
 .. testsetup::
 
     from foo import foo
+
+Doctest in the documentation
+----------------------------
+
+>>> foo('dummy')
+'foo'
+
+
+Content
+-------
+
 
 .. automodule:: foo
     :members:

@@ -22,4 +22,4 @@ deploy:
   local-dir: .tox/docs/_build
   on:
     tags: true
-    condition: $TOX = docs
+    condition: $TOX = "docs"
