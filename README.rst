@@ -28,7 +28,7 @@ See `.readthedocs.yml <.readthedocs.yml>`_
 to see how to deploy to
 `Read the Docs <https://test-python-docs.readthedocs.io/>`_
 
-See `.travis-ci.yml <.travis-ci.yml>`_
+See `.travis.yml <.travis.yml>`_
 files to see how to tests and build the docs and deploy it to
 `Github Pages <https://seignovert.github.io/test-python-docs/>`_.
 
