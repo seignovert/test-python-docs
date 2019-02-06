@@ -30,7 +30,7 @@ to see how to deploy to
 
 See `.travis.yml <.travis.yml>`_
 files to see how to tests and build the docs and deploy it to
-`Github Pages <https://github.com/seignovert/test-python-docs/releases>`_ and
+`Github Releases <https://github.com/seignovert/test-python-docs/releases>`_ and
 `Github Pages <https://seignovert.github.io/test-python-docs/>`_.
 
 Sphinx autobuild
