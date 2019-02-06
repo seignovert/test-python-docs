@@ -1,0 +1,20 @@
+
+{
+    "title": "Testing Python docs auto deploy",
+    "description": "<p>Python project to create documentation files on Read the Docs and deploy it to Github releases and pages.</p><p>See <a href=\"https://github.com/seignovert/test-python-docs/blob/master/.readthedocs.yml\">.readthedocs.yml</a> to see how to deploy to <a href=\"https://test-python-docs.readthedocs.io/\">Read the Docs</a></p><p>See <a href=\"https://github.com/seignovert/test-python-docs/blob/master/.travis.yml\">.travis-ci.yml</a> files to see how to tests and build the docs and deploy it to <a href=\"https://github.com/seignovert/test-python-docs/releases\">Github Releases</a> and <a href=\"https://seignovert.github.io/test-python-docs/\">Github Pages</a>.</p><stong>Sphinx autobuild (with live reload)</strong><p>Install:</p><pre><code>$ pip install -r docs/requirements.txt</code></pre><p><strong>Start autobuild:</strong></p><pre><code>$ make livehtml</code></pre>",
+    "license": "MIT",
+    "upload_type": "software",
+    "access_right": "open",
+    "creators": [
+        {
+            "name": "Seignovert, Benoît",
+            "orcid": "0000-0001-6533-275X"
+        }
+    ],
+    "keywords": [
+        "python",
+        "docs",
+        "test"
+    ]
+}
+
