@@ -16,6 +16,7 @@ after_success:
 
 deploy:
   - provider: releases
+    name: Version $TRAVIS_TAG
     api_key: $GITHUB_TOKEN
     skip-cleanup: true
     on:

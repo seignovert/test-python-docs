@@ -1,7 +1,7 @@
 Test Python Docs
 =================
 
-|Docs| |RTD| |Build| |Coverage| |Github| |License| |Tag|
+|Docs| |RTD| |Build| |Coverage| |Github| |License| |Release|
 
 .. |Docs| image:: 	https://img.shields.io/readthedocs/test-python-docs.svg?logo=read-the-docs&logoColor=white
           :target: https://readthedocs.org/projects/test-python-docs/
@@ -21,7 +21,7 @@ Test Python Docs
 .. |License| image:: https://img.shields.io/github/license/seignovert/test-python-docs.svg
              :target: https://github.com/seignovert/test-python-docs/
 
-.. |Tag| image:: https://img.shields.io/github/tag/seignovert/test-python-docs.svg
+.. |Release| image:: https://img.shields.io/github/release/seignovert/test-python-docs.svg
           :target: https://github.com/seignovert/test-python-docs/releases
 
 See `.readthedocs.yml <.readthedocs.yml>`_
@@ -30,6 +30,7 @@ to see how to deploy to
 
 See `.travis.yml <.travis.yml>`_
 files to see how to tests and build the docs and deploy it to
+`Github Pages <https://github.com/seignovert/test-python-docs/releases>`_ and
 `Github Pages <https://seignovert.github.io/test-python-docs/>`_.
 
 Sphinx autobuild
