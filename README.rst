@@ -25,7 +25,7 @@ Test Python Docs
           :target: https://seignovert.github.io/test-python-docs/
 
 .. |PyPI| image:: https://img.shields.io/badge/PyPI%20(test)-foo--docs-blue.svg?logo=python&logoColor=white
-        :target: https://test.pypi.org/project/webgeocalc
+        :target: https://test.pypi.org/project/foo--docs
 
 .. |Release| image:: https://img.shields.io/github/release/seignovert/test-python-docs.svg
           :target: https://github.com/seignovert/test-python-docs/releases
