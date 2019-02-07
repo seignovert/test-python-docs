@@ -1,5 +1,7 @@
+'''Dummy foo module.'''
+
 def foo(dummy):
-    """Foo function.
+    '''Foo function.
 
     Args:
         dummy (str): Dummy parameter
@@ -17,9 +19,10 @@ def foo(dummy):
     Note:
         Test note in docstring
 
-    """
+    '''
     return 'foo'
 
 def bar():
+    '''Bar function.'''
     bar = 'bar'
     return f"{bar}"

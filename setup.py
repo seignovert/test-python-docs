@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+'''Packaging logic for Foo-docs.'''
 
 # This will try to import setuptools. If not here, it fails with a message
 try:

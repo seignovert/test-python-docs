@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-#
-# Configuration file for the Sphinx documentation builder.
-#
-# This file does only contain a selection of the most common options. For a
-# full list see the documentation:
-# http://www.sphinx-doc.org/en/master/config
+'''Configuration file for the Sphinx documentation builder.
+
+This file does only contain a selection of the most common options. For a
+full list see the documentation:
+http://www.sphinx-doc.org/en/master/config
+'''
 
 # -- Path setup --------------------------------------------------------------
 
@@ -14,22 +14,26 @@
 #
 import os
 import sys
-sys.path.insert(0, os.path.abspath('..'))
 from configparser import ConfigParser
+sys.path.insert(0, os.path.abspath('..'))
+
 
 # -- Project information -----------------------------------------------------
 
 def setup_cfg(fname='setup.cfg'):
+    '''Parse ``setup.cfg`` file.'''
     cfg = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', fname))
     if not os.path.exists(cfg):
-        raise FileNotFoundError(f'`{fname}` can not be located at the root of the project.')
+        raise FileNotFoundError(
+            f'`{fname}` can not be located at the root of the project.')
     return cfg
+
 
 parser = ConfigParser()
 parser.read(setup_cfg())
 metadata = dict(parser.items('metadata'))
 
-project = metadata['name'].replace('-',' ').title()
+project = metadata['name'].replace('-', ' ').title()
 author = metadata['author']
 copyright = metadata['copyright_date'] + ', ' + author
 
@@ -47,7 +51,6 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.napoleon',
     'sphinx.ext.doctest',
-    'sphinx.ext.coverage',
     'sphinx.ext.viewcode',
     'sphinx.ext.githubpages',
 ]
