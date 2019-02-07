@@ -84,6 +84,7 @@
               <div class="local-toc"><ul>
 <li><a class="reference internal" href="#">Test Python Docs</a><ul>
 <li><a class="reference internal" href="#sphinx-autobuild">Sphinx autobuild</a></li>
+<li><a class="reference internal" href="#id1">Zenodo DOI</a></li>
 <li><a class="reference internal" href="#doctest-in-the-documentation">Doctest in the documentation</a></li>
 <li><a class="reference internal" href="#module-foo">Content</a></li>
 </ul>
@@ -154,24 +155,40 @@
             
   <div class="section" id="test-python-docs">
 <h1>Test Python Docs<a class="headerlink" href="#test-python-docs" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://readthedocs.org/projects/test-python-docs/"><img alt="Docs" src="https://img.shields.io/readthedocs/test-python-docs.svg?logo=read-the-docs&amp;logoColor=white" /></a> <a class="reference external" href="https://test-python-docs.readthedocs.io/"><img alt="RTD" src="https://img.shields.io/badge/readthedocs.io-test--python--docs-blue.svg?logo=read-the-docs&amp;logoColor=white" /></a> <a class="reference external" href="https://travis-ci.org/seignovert/test-python-docs"><img alt="Build" src="https://img.shields.io/travis/seignovert/test-python-docs.svg?logo=travis-ci&amp;logoColor=white" /></a> <a class="reference external" href="https://coveralls.io/github/seignovert/test-python-docs"><img alt="Coverage" src="https://img.shields.io/coveralls/github/seignovert/test-python-docs.svg?logo=travis-ci&amp;logoColor=white" /></a> <a class="reference external" href="https://seignovert.github.io/test-python-docs/"><img alt="Github" src="https://img.shields.io/badge/github.io-test--python--docs-blue.svg?logo=github&amp;logoColor=white" /></a> <a class="reference external" href="https://github.com/seignovert/test-python-docs/"><img alt="License" src="https://img.shields.io/github/license/seignovert/test-python-docs.svg" /></a> <a class="reference external" href="https://github.com/seignovert/test-python-docs/releases"><img alt="Release" src="https://img.shields.io/github/release/seignovert/test-python-docs.svg" /></a></p>
+<p><a class="reference external" href="https://readthedocs.org/projects/test-python-docs/"><img alt="Docs" src="https://img.shields.io/readthedocs/test-python-docs.svg?logo=read-the-docs&amp;logoColor=white" /></a> <a class="reference external" href="https://test-python-docs.readthedocs.io/"><img alt="RTD" src="https://img.shields.io/badge/readthedocs.io-test--python--docs-blue.svg?logo=read-the-docs&amp;logoColor=white" /></a></p>
+<p><a class="reference external" href="https://travis-ci.org/seignovert/test-python-docs"><img alt="CI" src="https://img.shields.io/travis/seignovert/test-python-docs.svg?logo=travis-ci&amp;logoColor=white" /></a> <a class="reference external" href="https://coveralls.io/github/seignovert/test-python-docs"><img alt="Coverage" src="https://img.shields.io/coveralls/github/seignovert/test-python-docs.svg?logo=travis-ci&amp;logoColor=white" /></a> <a class="reference external" href="https://seignovert.github.io/test-python-docs/"><img alt="Github" src="https://img.shields.io/badge/github.io-test--python--docs-blue.svg?logo=github&amp;logoColor=white" /></a></p>
+<p><a class="reference external" href="https://test.pypi.org/project/foo--docs"><img alt="PyPI" src="https://img.shields.io/badge/PyPI%20(test)-foo--docs-blue.svg?logo=python&amp;logoColor=white" /></a> <a class="reference external" href="https://github.com/seignovert/test-python-docs/releases"><img alt="Release" src="https://img.shields.io/github/release/seignovert/test-python-docs.svg" /></a> <a class="reference external" href="https://sandbox.zenodo.org/badge/latestdoi/168057818"><img alt="DOI" src="https://sandbox.zenodo.org/badge/168057818.svg" /></a></p>
+<p><a class="reference external" href="https://github.com/seignovert/test-python-docs/"><img alt="License" src="https://img.shields.io/github/license/seignovert/test-python-docs.svg" /></a></p>
 <p>See <a class="reference external" href=".readthedocs.yml">.readthedocs.yml</a>
-to see how to deploy to
-<a class="reference external" href="https://test-python-docs.readthedocs.io/">Read the Docs</a></p>
+to see how to configure
+<a class="reference external" href="https://test-python-docs.readthedocs.io/">Read the Docs</a> deployment.</p>
 <p>See <a class="reference external" href=".travis.yml">.travis.yml</a>
-files to see how to tests and build the docs and deploy it to
-<a class="reference external" href="https://github.com/seignovert/test-python-docs/releases">Github Releases</a> and
-<a class="reference external" href="https://seignovert.github.io/test-python-docs/">Github Pages</a>.</p>
+files to see how to tests and build the docs and deploy it to:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://test.pypi.org/project/foo-docs/">PyPI</a></li>
+<li><a class="reference external" href="https://github.com/seignovert/test-python-docs/releases">Github Releases</a></li>
+<li><a class="reference external" href="https://seignovert.github.io/test-python-docs/">Github Pages</a></li>
+<li><a class="reference external" href="https://sandbox.zenodo.org/record/257355">Zenodo DOI</a></li>
+</ul>
 <div class="section" id="sphinx-autobuild">
 <h2>Sphinx autobuild<a class="headerlink" href="#sphinx-autobuild" title="Permalink to this headline">¶</a></h2>
 <p>Install:</p>
 <div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install -r docs/requirements.txt
 </pre></div>
 </div>
-<p>Start autobuild:</p>
+<p>Start autobuild (with live reload):</p>
 <div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ make livehtml
 </pre></div>
 </div>
+</div>
+<div class="section" id="id1">
+<h2>Zenodo DOI<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Github releases can be hook with
+<a class="reference external" href="https://guides.github.com/activities/citable-code/">Zenodo</a>
+to get DOI for each release. See <a class="reference external" href=".zenodo.json">.zenodo.json</a>
+will provide automatically your metadata to Zenodo.</p>
+<p>(Note: in this test case, we hooks our release with Zenodo
+sandbox to avoid dummy publications, therefore the DOI is invalid).</p>
 </div>
 <div class="section" id="doctest-in-the-documentation">
 <h2>Doctest in the documentation<a class="headerlink" href="#doctest-in-the-documentation" title="Permalink to this headline">¶</a></h2>
