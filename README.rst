@@ -37,16 +37,18 @@ Test Python Docs
              :target: https://github.com/seignovert/test-python-docs/
 
 See `.readthedocs.yml <.readthedocs.yml>`_
-to see how to deploy to
-`Read the Docs <https://test-python-docs.readthedocs.io/>`_
+to see how to configure
+`Read the Docs <https://test-python-docs.readthedocs.io/>`_ deployment.
 
 See `.travis.yml <.travis.yml>`_
 files to see how to tests and build the docs and deploy it to:
+
 - `PyPI <https://test.pypi.org/project/foo-docs/>`_
 - `Github Releases <https://github.com/seignovert/test-python-docs/releases>`_
-- `Github Pages <https://seignovert.github.io/test-python-docs/>`_.
+- `Github Pages <https://seignovert.github.io/test-python-docs/>`_
+- `Zenodo DOI <https://sandbox.zenodo.org/record/257355>`_
 
-Sphinx autobuild
+Sphinx autobuild 
 ----------------
 
 Install:
@@ -55,7 +57,7 @@ Install:
 
     $ pip install -r docs/requirements.txt
 
-Start autobuild:
+Start autobuild (with live reload):
 
 .. code:: bash
 
@@ -65,9 +67,10 @@ Start autobuild:
 Zenodo DOI
 ----------
 
-Github releases can be hook with `Zenodo`_ to get DOI for each
-release. (Note: in `this test case`_, only we hooks Zenodo
-sandbox to avoid dummy publications, therefore the DOI is invalid).
+Github releases can be hook with
+`Zenodo <https://guides.github.com/activities/citable-code/>`_
+to get DOI for each release. See `.zenodo.json <.zenodo.json>`_
+will provide automatically your metadata to Zenodo.
 
-.. _`Zenodo`: https://sandbox.zenodo.org/
-.. _`this test case`: https://sandbox.zenodo.org/record/257355
+(Note: in this test case, we hooks our release with Zenodo
+sandbox to avoid dummy publications, therefore the DOI is invalid).
