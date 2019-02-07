@@ -9,11 +9,11 @@ env:
   - TOX="linter"
 
 install:
-  - pip install tox-travis python-coveralls
+  - pip install tox-travis
 script:
   - tox
 after_success:
-  - test $TOX = "tests" && coveralls
+  - test $TOX = "tests" && pip install python-coveralls && coveralls
 
 deploy:
   - provider: pypi
