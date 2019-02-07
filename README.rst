@@ -48,7 +48,7 @@ files to see how to tests and build the docs and deploy it to:
 - `Github Pages <https://seignovert.github.io/test-python-docs/>`_
 - `Zenodo DOI <https://sandbox.zenodo.org/record/257355>`_
 
-Sphinx autobuild 
+Sphinx autobuild
 ----------------
 
 Install:

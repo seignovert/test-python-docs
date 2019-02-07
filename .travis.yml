@@ -18,7 +18,7 @@ deploy:
   - provider: pypi
     user: $PYPI_USER
     password:
-      secure: $PYPI_SECURE_PASSWORD
+      secure: ytL2hH864Lugo+rIeUC9B7qAPPZ2qC8+KZReI4ekopJb+GJ73VOr/X6P97bMHp3g9Gg8BVnsbACNit8XZSTYm4PTGC/xzBLUkn3SjIEgckNvzLg+2RpqXDl21Os/ZgxTwx2rc0ENynvt4Z6IDY1g57z7Zf5laGlsjMZGUziNxynn3qwvWe1prkUl5A7nbOm2L1X63mLUYLx69D3Oy38KJhCtClJdrzxk0ZvPLsdQaAjpFcRF2CJMVAlmL5YJBDX4XiY2eX/Kt1/Y9whc4O36rVUSJHIZeESbTA7QfgmSfgpdMQUtMJ2lnWGwHoNlefSWyrm2p5vFsodkClDrGuUPfjrMlfEdl2VYzJ0MlWpvex4SfTbqZEUE0n/KP98/0nyoyDUWX8G6Zl3CFINMnvbO+JJ27p6s9NN2YGR/Mzx/ULs1RTPeHC7bFSa7Ho/iBpeYSaCi2KKL3ciMW0xqiMS2aq4ysz+1qD+R45g65G9GYD9o9hh7gVomudO36oRGiDbDtv5xeEd3++mZUg17hbzXQapsZgL6j1C0ZVcTGBF1dD8JfKlTImtrzGPaeLyZ2N9v3AQZSuRlrvVozDPiZT1Zbh6+zYQDg4xYh/toyr6OsZE7AJXkBr0lZzkO5WOzk3IVum3URqWg4TtGmj+zx4RqvDXziMUVa08zhQzUDjq/8yQ=
     server: https://test.pypi.org/legacy/
     distributions: sdist bdist_wheel
     skip-cleanup: true
@@ -29,7 +29,7 @@ deploy:
   - provider: releases
     name: Version $TRAVIS_TAG
     api_key:
-      secure: $GITHUB_SECURE_TOKEN
+      secure: G4oM7U54hyXF4JBmSB1Jf6gwiCQVFoXS/PGMT9AwqWqoY0VcNTc6IQM0Wn1tkPa0zsbUbSC3M3PtLHBD1mlAvyAYiUHVEbkarRq2cF3SfnDeqcCDv/D8mfymfTDJMCcvcHbhMu2qTLEswNWtaQ+qK9NOEb6db9N4HhAzzU8tMgimyTnk3/wvgmk6k8gR1bq718vDWA5YuYX7AXI3oaeozpAFIIEWT4OumVhTGTlsILkMAeTmxp/ValoT9+BHVaPXYEqKmBL6n3rAtl3WU53SVM3T3cEScDqqkCbCjm7etty2dqP/aJwFaIYx7WXvYfxy4PWbCJsveF172+xH8wEF+sGc/ts/Rygc+OSE7gYjoyvKhsD41D5rqmlxP0UNiMSI5CdNLQHe59clEUHeTxKvQWQ1FsVoFJWmfwFH/M8kIG2T7P3WppJBxik8pposa7+sn+ehdJCQ5P3MvRlR0PVrXO5XB6PlkmvwhGf0t88fRaFt7A3xXivUmbXAfthKL3tFBmPrbIiYW5Fh/dbyI/IUr8/8x0jo5uJjUpcuYSvXOqzcpaJJ6OSfM28sLdf1OYZtZdTCXWMZYZ9IqffccLbAoyaTY/JH6LdbJDZHcUjxhyypjEuBX8YeJQmJpSYxyKbDiQi5/ImwV1mwwIJLwgfSHJRsUtxjCbZE5sGMvhodnF4=
     skip-cleanup: true
     on:
       tags: true
@@ -37,7 +37,7 @@ deploy:
 
   - provider: pages
     github-token:
-      secure: $GITHUB_SECURE_TOKEN
+      secure: G4oM7U54hyXF4JBmSB1Jf6gwiCQVFoXS/PGMT9AwqWqoY0VcNTc6IQM0Wn1tkPa0zsbUbSC3M3PtLHBD1mlAvyAYiUHVEbkarRq2cF3SfnDeqcCDv/D8mfymfTDJMCcvcHbhMu2qTLEswNWtaQ+qK9NOEb6db9N4HhAzzU8tMgimyTnk3/wvgmk6k8gR1bq718vDWA5YuYX7AXI3oaeozpAFIIEWT4OumVhTGTlsILkMAeTmxp/ValoT9+BHVaPXYEqKmBL6n3rAtl3WU53SVM3T3cEScDqqkCbCjm7etty2dqP/aJwFaIYx7WXvYfxy4PWbCJsveF172+xH8wEF+sGc/ts/Rygc+OSE7gYjoyvKhsD41D5rqmlxP0UNiMSI5CdNLQHe59clEUHeTxKvQWQ1FsVoFJWmfwFH/M8kIG2T7P3WppJBxik8pposa7+sn+ehdJCQ5P3MvRlR0PVrXO5XB6PlkmvwhGf0t88fRaFt7A3xXivUmbXAfthKL3tFBmPrbIiYW5Fh/dbyI/IUr8/8x0jo5uJjUpcuYSvXOqzcpaJJ6OSfM28sLdf1OYZtZdTCXWMZYZ9IqffccLbAoyaTY/JH6LdbJDZHcUjxhyypjEuBX8YeJQmJpSYxyKbDiQi5/ImwV1mwwIJLwgfSHJRsUtxjCbZE5sGMvhodnF4=
     keep-history: true
     local-dir: .tox/docs/_build
     skip-cleanup: true
