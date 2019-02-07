@@ -4,16 +4,16 @@ cache: pip
 python: 3.6
 
 env:
-  - TOX="tests"
-  - TOX="docs"
-  - TOX="linter"
+  - JOB="tests"
+  - JOB="docs"
+  - JOB="linter"
 
 install:
   - pip install tox-travis
 script:
   - tox
 after_success:
-  - test $TOX = "tests" && pip install python-coveralls && coveralls
+  - test $JOB = "tests" && pip install python-coveralls && coveralls
 
 deploy:
   - provider: pypi
@@ -25,7 +25,7 @@ deploy:
     skip-cleanup: true
     on:
       tags: true
-      condition: $TOX = "tests"
+      condition: $JOB = "tests"
 
   - provider: releases
     name: Version $TRAVIS_TAG
@@ -34,7 +34,7 @@ deploy:
     skip-cleanup: true
     on:
       tags: true
-      condition: $TOX = "docs"
+      condition: $JOB = "docs"
 
   - provider: pages
     github-token:
@@ -44,4 +44,4 @@ deploy:
     skip-cleanup: true
     on:
       tags: true
-      condition: $TOX = "docs"
+      condition: $JOB = "docs"
