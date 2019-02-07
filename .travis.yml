@@ -16,14 +16,13 @@ after_success:
 
 deploy:
   - provider: pypi
-    user: $PYPI_USER
+    user: seignovert
     password:
-      secure: ytL2hH864Lugo+rIeUC9B7qAPPZ2qC8+KZReI4ekopJb+GJ73VOr/X6P97bMHp3g9Gg8BVnsbACNit8XZSTYm4PTGC/xzBLUkn3SjIEgckNvzLg+2RpqXDl21Os/ZgxTwx2rc0ENynvt4Z6IDY1g57z7Zf5laGlsjMZGUziNxynn3qwvWe1prkUl5A7nbOm2L1X63mLUYLx69D3Oy38KJhCtClJdrzxk0ZvPLsdQaAjpFcRF2CJMVAlmL5YJBDX4XiY2eX/Kt1/Y9whc4O36rVUSJHIZeESbTA7QfgmSfgpdMQUtMJ2lnWGwHoNlefSWyrm2p5vFsodkClDrGuUPfjrMlfEdl2VYzJ0MlWpvex4SfTbqZEUE0n/KP98/0nyoyDUWX8G6Zl3CFINMnvbO+JJ27p6s9NN2YGR/Mzx/ULs1RTPeHC7bFSa7Ho/iBpeYSaCi2KKL3ciMW0xqiMS2aq4ysz+1qD+R45g65G9GYD9o9hh7gVomudO36oRGiDbDtv5xeEd3++mZUg17hbzXQapsZgL6j1C0ZVcTGBF1dD8JfKlTImtrzGPaeLyZ2N9v3AQZSuRlrvVozDPiZT1Zbh6+zYQDg4xYh/toyr6OsZE7AJXkBr0lZzkO5WOzk3IVum3URqWg4TtGmj+zx4RqvDXziMUVa08zhQzUDjq/8yQ=
-    server: https://test.pypi.org/legacy/
+      secure: 15qNERDqwRGYsT0O++eXBAimzsIjI+RLSBNtzV+V74q4Jv6bJwu9ZNeYr3BERs3vBiwTGkVVohGb72ok8wJvdGOrZDefDdhUL/LSoQaXB+m76g53uZQZT5mpMskMDhWYiAkNcGj8XT37DsA8r4ik3z7RRqsQDR2iQnH8r9iqxhU33FOSfg0mDekRqw9aHKy030f5xiTwWg12ZYTjbrriOi/idXSjIEs/a6nEEJ1n6LoZsigVh0Hn4adIxljJ/IKRbRzN5BCgppoV7Qc5Tvqr+hTHPKjN306ZFFN3uF2vkGTkJRtg5uvcMDJAg/KjS7jVHDrqNbns/faFxNpPDckeGk067MUr880es8ah4sXGEyRyTSozwr8UVphiorHQDDfIC+bm9P96URe6Dfo2x3c16uvUwqcgH4IDfNoZEq3YBaKjC7quQukExl/f+nViUL+JUJWeeNoOicbocjd5862EoXdL9VHWLHTIJRAxzrBJd0uCi/Zv0R+kkXVMPCPlkYnyKQRnSOgvpjjnAhDNXT8wMvMxv8tBLNQjNRgxsknr9kgWQ1O1aRhDzJiki0dZ2pav56hMNnFVXyO90AsCfEtcQ35CYpvFdqhSuJvfSr/E5s41WUbMErSGhUz3Pny5ccgRb/GgRwuetxwVSJUmq0q7frfqNsa/NjwhvC3e1yAK2Gg=
+    server: https://test.pypi.org/pypi
     distributions: sdist bdist_wheel
     skip-cleanup: true
     on:
-      tags: true
       condition: $TOX = "tests"
 
   - provider: releases
