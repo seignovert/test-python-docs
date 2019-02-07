@@ -23,6 +23,7 @@ deploy:
     distributions: sdist bdist_wheel
     skip-cleanup: true
     on:
+      tags: true
       condition: $TOX = "tests"
 
   - provider: releases
