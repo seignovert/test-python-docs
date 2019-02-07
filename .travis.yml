@@ -15,16 +15,29 @@ after_success:
   - test $TOX = "tests" && coveralls
 
 deploy:
+  - provider: pypi
+    user: $PYPI_USER
+    password:
+      secure: $PYPI_SECURE_PASSWORD
+    server: https://test.pypi.org/legacy/
+    distributions: sdist bdist_wheel
+    skip-cleanup: true
+    on:
+      tags: true
+      condition: $TOX = "tests"
+
   - provider: releases
     name: Version $TRAVIS_TAG
-    api_key: $GITHUB_TOKEN
+    api_key:
+      secure: $GITHUB_SECURE_TOKEN
     skip-cleanup: true
     on:
       tags: true
       condition: $TOX = "docs"
 
   - provider: pages
-    github-token: $GITHUB_TOKEN
+    github-token:
+      secure: $GITHUB_SECURE_TOKEN
     keep-history: true
     local-dir: .tox/docs/_build
     skip-cleanup: true
