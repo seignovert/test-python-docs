@@ -1,7 +1,0 @@
-Undocumented Python objects
-===========================
-foo
----
-Functions:
- * bar
-
