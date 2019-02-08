@@ -1,5 +1,5 @@
-Test Python Docs
-=================
+CI/CD examples to test and deploy python packages from Github
+=============================================================
 
 |Docs| |RTD|
 
@@ -24,8 +24,8 @@ Test Python Docs
 .. |Github| image:: https://img.shields.io/badge/github.io-test--python--docs-blue.svg?logo=github&logoColor=white
           :target: https://seignovert.github.io/test-python-docs/
 
-.. |PyPI| image:: https://img.shields.io/badge/PyPI%20(test)-foo--docs-blue.svg?logo=python&logoColor=white
-        :target: https://test.pypi.org/project/foo--docs
+.. |PyPI| image:: https://img.shields.io/badge/PyPI%20(test)-foo--autodeploy-blue.svg?logo=python&logoColor=white
+        :target: https://test.pypi.org/project/foo-autodeploy/
 
 .. |Release| image:: https://img.shields.io/github/release/seignovert/test-python-docs.svg
           :target: https://github.com/seignovert/test-python-docs/releases
@@ -36,41 +36,65 @@ Test Python Docs
 .. |License| image:: https://img.shields.io/github/license/seignovert/test-python-docs.svg
              :target: https://github.com/seignovert/test-python-docs/
 
-See `.readthedocs.yml <.readthedocs.yml>`_
-to see how to configure
-`Read the Docs <https://test-python-docs.readthedocs.io/>`_ deployment.
+Python project to showcase how to hook Github with:
 
-See `.travis.yml <.travis.yml>`_
-files to see how to tests and build the docs and deploy it to:
+- Travis CI
+- Coveralls.io
+- PyPI
+- Read the Docs
+- Github Pages
+- Github Releases
+- Zenodo
 
-- `PyPI <https://test.pypi.org/project/foo-docs/>`_
+See `setup.cfg <setup.cfg>`_ to configure:
+
+- package description (name, author, url, files…).
+- PyPI deploy settings.
+- Pytest options.
+- Coverage report settings.
+- Linter settings.
+
+See `tox.ini <tox.ini>`_ to configure:
+
+- module tests from ``tests/`` folder (with `pytest`).
+- module coverage (from `pytest` output).
+- documentation build from ``docs/`` folder (with `sphinx`,
+  `autodoc` and `napoleon`).
+- documentation tests from ``docs/*.rst`` files and
+  docstrings in ``foo`` module.
+- linter python files syntax (with `flake8`).
+
+See `.travis.yml <.travis.yml>`_ to configure CI tests and deployments to:
+
+- `Coveralls.io <https://coveralls.io/github/seignovert/test-python-docs>`_
+- `PyPI (test) <https://test.pypi.org/project/foo-autodeploy/>`_
 - `Github Releases <https://github.com/seignovert/test-python-docs/releases>`_
 - `Github Pages <https://seignovert.github.io/test-python-docs/>`_
-- `Zenodo DOI <https://sandbox.zenodo.org/record/257355>`_
 
-Sphinx autobuild
-----------------
+See `.readthedocs.yml <.readthedocs.yml>`_
+to configure `Read the Docs <https://test-python-docs.readthedocs.io/>`_ deployment.
+
+See `.zenodo.json <.zenodo.json>`_ to configure
+`Zenodo <https://zenodo.org>`_ deployment, to get a DOI for each
+`Github release <https://guides.github.com/activities/citable-code/>`_.
+
+(Note: in this test case, we hook our release with Zenodo
+sandbox interface to avoid dummy publications, therefore the DOI badge
+is not valid but the record can be found
+`here <https://sandbox.zenodo.org/record/257354>`_).
+
+
+Sphinx autobuild (tip)
+----------------------
 
 Install:
 
 .. code:: bash
 
-    $ pip install -r docs/requirements.txt
+    $ pip install sphinx-autobuild
 
 Start autobuild (with live reload):
 
 .. code:: bash
 
-    $ make livehtml
-
-
-Zenodo DOI
-----------
-
-Github releases can be hook with
-`Zenodo <https://guides.github.com/activities/citable-code/>`_
-to get DOI for each release. See `.zenodo.json <.zenodo.json>`_
-will provide automatically your metadata to Zenodo.
-
-(Note: in this test case, we hooks our release with Zenodo
-sandbox to avoid dummy publications, therefore the DOI is invalid).
+    $ cd docs ; make livehtml
