@@ -5,9 +5,11 @@ CI/CD examples to test and deploy python packages from Github
 
 |CI| |Coverage| |Github|
 
-|PyPI| |Release| |DOI|
+|PyPI|  |PyPI Version| |Python Version|
 
-|License|
+|Conda| |Conda Version| |Conda Platform|
+
+|License| |DOI|
 
 .. |Docs| image:: https://img.shields.io/readthedocs/test-python-docs.svg?logo=read-the-docs&logoColor=white
           :target: https://readthedocs.org/projects/test-python-docs/
@@ -27,20 +29,33 @@ CI/CD examples to test and deploy python packages from Github
 .. |PyPI| image:: https://img.shields.io/badge/PyPI%20(test)-foo--autodeploy-blue.svg?logo=python&logoColor=white
         :target: https://test.pypi.org/project/foo-autodeploy/
 
-.. |Release| image:: https://img.shields.io/github/release/seignovert/test-python-docs.svg
-          :target: https://github.com/seignovert/test-python-docs/releases
+.. |PyPI Version| image:: https://img.shields.io/github/release/seignovert/test-python-docs.svg?label=Version
+          :target: https://test.pypi.org/project/foo-autodeploy/
 
-.. |DOI| image:: https://sandbox.zenodo.org/badge/168057818.svg
-        :target: https://sandbox.zenodo.org/badge/latestdoi/168057818
+.. |Python Version| image:: https://img.shields.io/badge/Python-3.6-blue.svg
+        :target: https://test.pypi.org/project/foo-autodeploy/
+
+.. |Conda| image:: https://img.shields.io/badge/conda|seignovert-foo--autodeploy-blue.svg?logo=python&logoColor=white
+          :target: https://anaconda.org/seignovert/foo-autodeploy
+
+.. |Conda Version| image:: https://img.shields.io/conda/vn/seignovert/foo-autodeploy.svg?label=Version
+          :target: https://anaconda.org/seignovert/foo-autodeploy
+
+.. |Conda Platform| image:: https://img.shields.io/conda/pn/seignovert/foo-autodeploy.svg
+          :target: https://anaconda.org/seignovert/foo-autodeploy
 
 .. |License| image:: https://img.shields.io/github/license/seignovert/test-python-docs.svg
              :target: https://github.com/seignovert/test-python-docs/
+
+.. |DOI| image:: https://sandbox.zenodo.org/badge/168057818.svg
+        :target: https://sandbox.zenodo.org/badge/latestdoi/168057818
 
 Python project to showcase how to hook Github with:
 
 - Travis CI
 - Coveralls.io
 - PyPI
+- Anaconda
 - Read the Docs
 - Github Pages
 - Github Releases
@@ -68,8 +83,15 @@ See `.travis.yml <.travis.yml>`_ to configure CI tests and deployments to:
 
 - `Coveralls.io <https://coveralls.io/github/seignovert/test-python-docs>`_
 - `PyPI (test) <https://test.pypi.org/project/foo-autodeploy/>`_
+- `Anaconda <https://anaconda.org/seignovert/foo-autodeploy>`_
 - `Github Releases <https://github.com/seignovert/test-python-docs/releases>`_
 - `Github Pages <https://seignovert.github.io/test-python-docs/>`_
+
+See `recipe/ <recipe/>`_ folder to configure:
+
+- `meta.yaml <recipe/meta.yaml>`_ of conda recipe.
+- `deploy.sh <recipe/deploy.sh>`_ to install miniconda3,
+  build and deploy from Travis-CI to Anaconda.
 
 See `.readthedocs.yml <.readthedocs.yml>`_
 to configure `Read the Docs <https://test-python-docs.readthedocs.io/>`_ deployment.

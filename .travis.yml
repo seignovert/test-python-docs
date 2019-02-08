@@ -4,9 +4,13 @@ cache: pip
 python: 3.6
 
 env:
-  - JOB="tests"
-  - JOB="docs"
-  - JOB="linter"
+  global:
+    - USERNAME="seignovert"
+    - secure: VRmIpD8+VFL+qyCevrq21aJ11wVjgD8ocb5Ht5k+Ukrz0C7Uil3zxH+aEhxsY/2X6bjo7e9W5244Q1c8ndC8i8YQMKzQfOtIaa4B3iftvBM0eeXPW2/kp5Zws+/xjjvD7l3iTqEH510PrcEWKiJaFrX5+qMgfHhctwi/A5GkepVh7H3f3dJMx332mGUPpXjk6RfErSKf1jlLec0erknm7AvwHZwSMTlLhAHSFpKodiEmrUEPIFO6P411gZ9EoKnBaumsSubspzOSdJBSkMM4Y7mpF3gOnukt0q6ZTBQ/3myXrlOFsLcn2IQHHPf3RihjmpZp8pprUZKHW+AuN5v1B2Cw4XOH1x+l/3vlE8wy6qf9qO3hM1MbnVLaWRa9rmqN0gyvkVIUlVKsLeuV27OEilRPeB6BGTGNRsR1LlVCbtm0EFTfFVTZxG8hulKPXywY0Sk+0JRTmK3ZiaVC9Z+dle7aUMNhzpOtJPTYBUbfcefcsGijZXRQ6x9VZeILmf4P/82l3LYN4cn7Thco2Uq+07iSmQ8bSlgZjWYRjwbmnh9nvD4fXSIy76btXrkWitRE3WfiQ82UvDtU7FOofhgjcWZhKRBOZHNLj3jlY7gJHF9OwMZQSNTKEeYWw8z8/8pwcyevairrcI+9+Sp4/KAaJWCX22HYDHQZyp8VQjx+r58=
+  matrix:
+    - JOB="tests"
+    - JOB="docs"
+    - JOB="linter"
 
 install:
   - pip install tox-travis
@@ -17,12 +21,18 @@ after_success:
 
 deploy:
   - provider: pypi
-    user: seignovert
+    user: $USERNAME
     password:
       secure: 15qNERDqwRGYsT0O++eXBAimzsIjI+RLSBNtzV+V74q4Jv6bJwu9ZNeYr3BERs3vBiwTGkVVohGb72ok8wJvdGOrZDefDdhUL/LSoQaXB+m76g53uZQZT5mpMskMDhWYiAkNcGj8XT37DsA8r4ik3z7RRqsQDR2iQnH8r9iqxhU33FOSfg0mDekRqw9aHKy030f5xiTwWg12ZYTjbrriOi/idXSjIEs/a6nEEJ1n6LoZsigVh0Hn4adIxljJ/IKRbRzN5BCgppoV7Qc5Tvqr+hTHPKjN306ZFFN3uF2vkGTkJRtg5uvcMDJAg/KjS7jVHDrqNbns/faFxNpPDckeGk067MUr880es8ah4sXGEyRyTSozwr8UVphiorHQDDfIC+bm9P96URe6Dfo2x3c16uvUwqcgH4IDfNoZEq3YBaKjC7quQukExl/f+nViUL+JUJWeeNoOicbocjd5862EoXdL9VHWLHTIJRAxzrBJd0uCi/Zv0R+kkXVMPCPlkYnyKQRnSOgvpjjnAhDNXT8wMvMxv8tBLNQjNRgxsknr9kgWQ1O1aRhDzJiki0dZ2pav56hMNnFVXyO90AsCfEtcQ35CYpvFdqhSuJvfSr/E5s41WUbMErSGhUz3Pny5ccgRb/GgRwuetxwVSJUmq0q7frfqNsa/NjwhvC3e1yAK2Gg=
     server: https://test.pypi.org/legacy/
     distributions: sdist bdist_wheel
     skip-cleanup: true
+    on:
+      tags: true
+      condition: $JOB = "tests"
+
+  - provider: script
+    script: bash recipe/deploy.sh
     on:
       tags: true
       condition: $JOB = "tests"

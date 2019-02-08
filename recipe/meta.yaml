@@ -1,0 +1,38 @@
+package:
+  name: foo-autodeploy
+  version: "{{ environ.get('$TRAVIS_TAG', 'dev').lstrip('v') }}"
+
+source:
+  git_url: ../
+
+build:
+  noarch: python
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -v "
+
+requirements:
+  build:
+    - pip
+    - python
+    - pbr
+  run:
+    - python
+    - requests
+
+test:
+  imports:
+    - foo
+
+about:
+  home: https://github.com/seignovert/test-python-docs
+  license: MIT
+  license_family: MIT
+  summary: CI/CD examples to test and deploy python packages from Github
+  description: |
+    Python project to showcase how to hook Github with Travis CI,
+    Coveralls.io, PyPI, Conda, Read the Docs, Github Pages,
+    Github Releases and Zenodo.
+  doc_url: https://test-python-docs.readthedocs.io/
+
+extra:
+  recipe-maintainers:
+    - seignovert
