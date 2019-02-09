@@ -3,7 +3,9 @@ CI/CD examples to test and deploy python packages from Github
 
 |Docs| |RTD|
 
-|CI| |Coverage| |Github|
+|CI| |Github Pages|
+
+|Codecov| |Coveralls|
 
 |PyPI|  |PyPI Version| |Python Version|
 
@@ -20,11 +22,14 @@ CI/CD examples to test and deploy python packages from Github
 .. |CI| image:: https://img.shields.io/travis/seignovert/test-python-docs.svg?logo=travis-ci&logoColor=white
            :target: https://travis-ci.org/seignovert/test-python-docs
 
-.. |Coverage| image:: https://img.shields.io/coveralls/github/seignovert/test-python-docs.svg?logo=travis-ci&logoColor=white
-              :target: https://coveralls.io/github/seignovert/test-python-docs
-
-.. |Github| image:: https://img.shields.io/badge/github.io-test--python--docs-blue.svg?logo=github&logoColor=white
+.. |Github Pages| image:: https://img.shields.io/badge/github.io-test--python--docs-blue.svg?logo=github&logoColor=white
           :target: https://seignovert.github.io/test-python-docs/
+
+.. |Codecov| image:: https://img.shields.io/codecov/c/github/seignovert/test-python-docs.svg?label=Codecov&logo=codecov&logoColor=white
+              :target: https://codecov.io/gh/seignovert/test-python-docs
+
+.. |Coveralls| image:: https://img.shields.io/coveralls/github/seignovert/test-python-docs.svg?label=Coveralls
+              :target: https://coveralls.io/github/seignovert/test-python-docs
 
 .. |PyPI| image:: https://img.shields.io/badge/PyPI%20(test)-foo--autodeploy-blue.svg?logo=python&logoColor=white
         :target: https://test.pypi.org/project/foo-autodeploy/
@@ -52,11 +57,12 @@ CI/CD examples to test and deploy python packages from Github
 
 Python project to showcase how to hook Github with:
 
+- Read the Docs
 - Travis CI
-- Coveralls.io
+- CodeCov
+- Coveralls
 - PyPI
 - Anaconda
-- Read the Docs
 - Github Pages
 - Github Releases
 - Zenodo
@@ -79,9 +85,13 @@ See `tox.ini <tox.ini>`_ to configure:
   docstrings in ``foo`` module.
 - linter python files syntax (with `flake8`).
 
+See `.readthedocs.yml <.readthedocs.yml>`_
+to configure `Read the Docs <https://test-python-docs.readthedocs.io/>`_ deployment.
+
 See `.travis.yml <.travis.yml>`_ to configure CI tests and deployments to:
 
-- `Coveralls.io <https://coveralls.io/github/seignovert/test-python-docs>`_
+- `Codecov <https://codecov.io/gh/seignovert/test-python-docs>`_
+- `Coveralls <https://coveralls.io/github/seignovert/test-python-docs>`_
 - `PyPI (test) <https://test.pypi.org/project/foo-autodeploy/>`_
 - `Anaconda <https://anaconda.org/seignovert/foo-autodeploy>`_
 - `Github Releases <https://github.com/seignovert/test-python-docs/releases>`_
@@ -92,9 +102,6 @@ See `recipe/ <recipe/>`_ folder to configure:
 - `meta.yaml <recipe/meta.yaml>`_ of conda recipe.
 - `deploy.sh <recipe/deploy.sh>`_ to install miniconda3,
   build and deploy from Travis-CI to Anaconda.
-
-See `.readthedocs.yml <.readthedocs.yml>`_
-to configure `Read the Docs <https://test-python-docs.readthedocs.io/>`_ deployment.
 
 See `.zenodo.json <.zenodo.json>`_ to configure
 `Zenodo <https://zenodo.org>`_ deployment, to get a DOI for each
