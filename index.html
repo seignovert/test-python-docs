@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>CI/CD examples to test and deploy python packages from Github &mdash; Foo Autodeploy 2.0.0 documentation</title>
+  <title>CI/CD examples to test and deploy python packages from Github &mdash; Foo Autodeploy 2.1.0 documentation</title>
   
 
   
@@ -56,7 +56,7 @@
             
             
               <div class="version">
-                2.0.0
+                2.1.0
               </div>
             
           
@@ -155,17 +155,19 @@
   <div class="section" id="ci-cd-examples-to-test-and-deploy-python-packages-from-github">
 <h1>CI/CD examples to test and deploy python packages from Github<a class="headerlink" href="#ci-cd-examples-to-test-and-deploy-python-packages-from-github" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://readthedocs.org/projects/test-python-docs/"><img alt="Docs" src="https://img.shields.io/readthedocs/test-python-docs.svg?logo=read-the-docs&amp;logoColor=white" /></a> <a class="reference external" href="https://test-python-docs.readthedocs.io/"><img alt="RTD" src="https://img.shields.io/badge/readthedocs.io-test--python--docs-blue.svg?logo=read-the-docs&amp;logoColor=white" /></a></p>
-<p><a class="reference external" href="https://travis-ci.org/seignovert/test-python-docs"><img alt="CI" src="https://img.shields.io/travis/seignovert/test-python-docs.svg?logo=travis-ci&amp;logoColor=white" /></a> <a class="reference external" href="https://coveralls.io/github/seignovert/test-python-docs"><img alt="Coverage" src="https://img.shields.io/coveralls/github/seignovert/test-python-docs.svg?logo=travis-ci&amp;logoColor=white" /></a> <a class="reference external" href="https://seignovert.github.io/test-python-docs/"><img alt="Github" src="https://img.shields.io/badge/github.io-test--python--docs-blue.svg?logo=github&amp;logoColor=white" /></a></p>
+<p><a class="reference external" href="https://travis-ci.org/seignovert/test-python-docs"><img alt="CI" src="https://img.shields.io/travis/seignovert/test-python-docs.svg?logo=travis-ci&amp;logoColor=white" /></a> <a class="reference external" href="https://seignovert.github.io/test-python-docs/"><img alt="Github Pages" src="https://img.shields.io/badge/github.io-test--python--docs-blue.svg?logo=github&amp;logoColor=white" /></a></p>
+<p><a class="reference external" href="https://codecov.io/gh/seignovert/test-python-docs"><img alt="Codecov" src="https://img.shields.io/codecov/c/github/seignovert/test-python-docs.svg?label=Codecov&amp;logo=codecov&amp;logoColor=white" /></a> <a class="reference external" href="https://coveralls.io/github/seignovert/test-python-docs"><img alt="Coveralls" src="https://img.shields.io/coveralls/github/seignovert/test-python-docs.svg?label=Coveralls" /></a></p>
 <p><a class="reference external" href="https://test.pypi.org/project/foo-autodeploy/"><img alt="PyPI" src="https://img.shields.io/badge/PyPI%20(test)-foo--autodeploy-blue.svg?logo=python&amp;logoColor=white" /></a>  <a class="reference external" href="https://test.pypi.org/project/foo-autodeploy/"><img alt="PyPI Version" src="https://img.shields.io/github/release/seignovert/test-python-docs.svg?label=Version" /></a> <a class="reference external" href="https://test.pypi.org/project/foo-autodeploy/"><img alt="Python Version" src="https://img.shields.io/badge/Python-3.6-blue.svg" /></a></p>
 <p><a class="reference external" href="https://anaconda.org/seignovert/foo-autodeploy"><img alt="Conda" src="https://img.shields.io/badge/conda|seignovert-foo--autodeploy-blue.svg?logo=python&amp;logoColor=white" /></a> <a class="reference external" href="https://anaconda.org/seignovert/foo-autodeploy"><img alt="Conda Version" src="https://img.shields.io/conda/vn/seignovert/foo-autodeploy.svg?label=Version" /></a> <a class="reference external" href="https://anaconda.org/seignovert/foo-autodeploy"><img alt="Conda Platform" src="https://img.shields.io/conda/pn/seignovert/foo-autodeploy.svg" /></a></p>
 <p><a class="reference external" href="https://github.com/seignovert/test-python-docs/"><img alt="License" src="https://img.shields.io/github/license/seignovert/test-python-docs.svg" /></a> <a class="reference external" href="https://sandbox.zenodo.org/badge/latestdoi/168057818"><img alt="DOI" src="https://sandbox.zenodo.org/badge/168057818.svg" /></a></p>
 <p>Python project to showcase how to hook Github with:</p>
 <ul class="simple">
+<li>Read the Docs</li>
 <li>Travis CI</li>
-<li>Coveralls.io</li>
+<li>CodeCov</li>
+<li>Coveralls</li>
 <li>PyPI</li>
 <li>Anaconda</li>
-<li>Read the Docs</li>
 <li>Github Pages</li>
 <li>Github Releases</li>
 <li>Zenodo</li>
@@ -188,9 +190,12 @@
 docstrings in <code class="docutils literal notranslate"><span class="pre">foo</span></code> module.</li>
 <li>linter python files syntax (with <cite>flake8</cite>).</li>
 </ul>
+<p>See <a class="reference external" href=".readthedocs.yml">.readthedocs.yml</a>
+to configure <a class="reference external" href="https://test-python-docs.readthedocs.io/">Read the Docs</a> deployment.</p>
 <p>See <a class="reference external" href=".travis.yml">.travis.yml</a> to configure CI tests and deployments to:</p>
 <ul class="simple">
-<li><a class="reference external" href="https://coveralls.io/github/seignovert/test-python-docs">Coveralls.io</a></li>
+<li><a class="reference external" href="https://codecov.io/gh/seignovert/test-python-docs">Codecov</a></li>
+<li><a class="reference external" href="https://coveralls.io/github/seignovert/test-python-docs">Coveralls</a></li>
 <li><a class="reference external" href="https://test.pypi.org/project/foo-autodeploy/">PyPI (test)</a></li>
 <li><a class="reference external" href="https://anaconda.org/seignovert/foo-autodeploy">Anaconda</a></li>
 <li><a class="reference external" href="https://github.com/seignovert/test-python-docs/releases">Github Releases</a></li>
@@ -202,8 +207,6 @@ docstrings in <code class="docutils literal notranslate"><span class="pre">foo</
 <li><a class="reference external" href="recipe/deploy.sh">deploy.sh</a> to install miniconda3,
 build and deploy from Travis-CI to Anaconda.</li>
 </ul>
-<p>See <a class="reference external" href=".readthedocs.yml">.readthedocs.yml</a>
-to configure <a class="reference external" href="https://test-python-docs.readthedocs.io/">Read the Docs</a> deployment.</p>
 <p>See <a class="reference external" href=".zenodo.json">.zenodo.json</a> to configure
 <a class="reference external" href="https://zenodo.org">Zenodo</a> deployment, to get a DOI for each
 <a class="reference external" href="https://guides.github.com/activities/citable-code/">Github release</a>.</p>
