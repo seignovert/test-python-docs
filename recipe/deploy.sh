@@ -19,4 +19,4 @@ hash -r
 conda install -q -y conda-build anaconda-client
 
 # Build recipe and upload it to anaconda cloud
-conda build recipe/ --token $CONDA_TOKEN --user $USERNAME
+conda build recipe/ --token $CONDA_TOKEN --user $USERNAME --python $TRAVIS_PYTHON_VERSION

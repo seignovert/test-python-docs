@@ -13,10 +13,10 @@ build:
 requirements:
   build:
     - pip
-    - python
+    - python {{ python }}
     - pbr
   run:
-    - python
+    - python {{ python }}
     - requests
 
 test:
