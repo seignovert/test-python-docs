@@ -54,7 +54,7 @@ jobs:
         distributions: sdist bdist_wheel
 
     - stage: deploy
-      env: GITHUB_RELEASE_DEPLOY
+      env: GITHUB_RELEASE
       install: true
       script: true
       deploy:
