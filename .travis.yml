@@ -1,55 +1,76 @@
 language: python
-cache: pip
 
 python: 3.6
 
+cache:
+  pip: true
+  directories:
+    - .tox
+    - $HOME/miniconda
+
+stages:
+  - test
+  - name: deploy
+    if: tag IS present
+
 env:
   global:
-    - USERNAME="seignovert"
-    - secure: VRmIpD8+VFL+qyCevrq21aJ11wVjgD8ocb5Ht5k+Ukrz0C7Uil3zxH+aEhxsY/2X6bjo7e9W5244Q1c8ndC8i8YQMKzQfOtIaa4B3iftvBM0eeXPW2/kp5Zws+/xjjvD7l3iTqEH510PrcEWKiJaFrX5+qMgfHhctwi/A5GkepVh7H3f3dJMx332mGUPpXjk6RfErSKf1jlLec0erknm7AvwHZwSMTlLhAHSFpKodiEmrUEPIFO6P411gZ9EoKnBaumsSubspzOSdJBSkMM4Y7mpF3gOnukt0q6ZTBQ/3myXrlOFsLcn2IQHHPf3RihjmpZp8pprUZKHW+AuN5v1B2Cw4XOH1x+l/3vlE8wy6qf9qO3hM1MbnVLaWRa9rmqN0gyvkVIUlVKsLeuV27OEilRPeB6BGTGNRsR1LlVCbtm0EFTfFVTZxG8hulKPXywY0Sk+0JRTmK3ZiaVC9Z+dle7aUMNhzpOtJPTYBUbfcefcsGijZXRQ6x9VZeILmf4P/82l3LYN4cn7Thco2Uq+07iSmQ8bSlgZjWYRjwbmnh9nvD4fXSIy76btXrkWitRE3WfiQ82UvDtU7FOofhgjcWZhKRBOZHNLj3jlY7gJHF9OwMZQSNTKEeYWw8z8/8pwcyevairrcI+9+Sp4/KAaJWCX22HYDHQZyp8VQjx+r58=
+    - USERNAME=seignovert
   matrix:
-    - JOB="tests"
-    - JOB="docs"
-    - JOB="linter"
+    - TOX_ENV=pytest
+    - TOX_ENV=docs
+    - TOX_ENV=linter
 
 install:
   - pip install tox-travis
 script:
   - tox
 
-deploy:
-  - provider: pypi
-    user: $USERNAME
-    password:
-      secure: 15qNERDqwRGYsT0O++eXBAimzsIjI+RLSBNtzV+V74q4Jv6bJwu9ZNeYr3BERs3vBiwTGkVVohGb72ok8wJvdGOrZDefDdhUL/LSoQaXB+m76g53uZQZT5mpMskMDhWYiAkNcGj8XT37DsA8r4ik3z7RRqsQDR2iQnH8r9iqxhU33FOSfg0mDekRqw9aHKy030f5xiTwWg12ZYTjbrriOi/idXSjIEs/a6nEEJ1n6LoZsigVh0Hn4adIxljJ/IKRbRzN5BCgppoV7Qc5Tvqr+hTHPKjN306ZFFN3uF2vkGTkJRtg5uvcMDJAg/KjS7jVHDrqNbns/faFxNpPDckeGk067MUr880es8ah4sXGEyRyTSozwr8UVphiorHQDDfIC+bm9P96URe6Dfo2x3c16uvUwqcgH4IDfNoZEq3YBaKjC7quQukExl/f+nViUL+JUJWeeNoOicbocjd5862EoXdL9VHWLHTIJRAxzrBJd0uCi/Zv0R+kkXVMPCPlkYnyKQRnSOgvpjjnAhDNXT8wMvMxv8tBLNQjNRgxsknr9kgWQ1O1aRhDzJiki0dZ2pav56hMNnFVXyO90AsCfEtcQ35CYpvFdqhSuJvfSr/E5s41WUbMErSGhUz3Pny5ccgRb/GgRwuetxwVSJUmq0q7frfqNsa/NjwhvC3e1yAK2Gg=
-    server: https://test.pypi.org/legacy/
-    distributions: sdist bdist_wheel
-    skip-cleanup: true
-    on:
-      tags: true
-      condition: $JOB = "tests"
+jobs:
+  include:
+    - stage: deploy
+      env:
+        - CONDA_DEPLOY
+        - MINICONDA_VERSION=Miniconda3-latest-Linux-x86_64
+        # travis encrypt CONDA_TOKEN=token
+        - secure: VRmIpD8+VFL+qyCevrq21aJ11wVjgD8ocb5Ht5k+Ukrz0C7Uil3zxH+aEhxsY/2X6bjo7e9W5244Q1c8ndC8i8YQMKzQfOtIaa4B3iftvBM0eeXPW2/kp5Zws+/xjjvD7l3iTqEH510PrcEWKiJaFrX5+qMgfHhctwi/A5GkepVh7H3f3dJMx332mGUPpXjk6RfErSKf1jlLec0erknm7AvwHZwSMTlLhAHSFpKodiEmrUEPIFO6P411gZ9EoKnBaumsSubspzOSdJBSkMM4Y7mpF3gOnukt0q6ZTBQ/3myXrlOFsLcn2IQHHPf3RihjmpZp8pprUZKHW+AuN5v1B2Cw4XOH1x+l/3vlE8wy6qf9qO3hM1MbnVLaWRa9rmqN0gyvkVIUlVKsLeuV27OEilRPeB6BGTGNRsR1LlVCbtm0EFTfFVTZxG8hulKPXywY0Sk+0JRTmK3ZiaVC9Z+dle7aUMNhzpOtJPTYBUbfcefcsGijZXRQ6x9VZeILmf4P/82l3LYN4cn7Thco2Uq+07iSmQ8bSlgZjWYRjwbmnh9nvD4fXSIy76btXrkWitRE3WfiQ82UvDtU7FOofhgjcWZhKRBOZHNLj3jlY7gJHF9OwMZQSNTKEeYWw8z8/8pwcyevairrcI+9+Sp4/KAaJWCX22HYDHQZyp8VQjx+r58=
+      install:
+        - test -d $HOME/miniconda/bin || (rm -rf $HOME/miniconda && wget https://repo.continuum.io/miniconda/$MINICONDA_VERSION.sh -q -O $HOME/miniconda.sh && bash $HOME/miniconda.sh -b -p $HOME/miniconda)
+        - export PATH="$HOME/miniconda/bin:$PATH" && hash -r
+        - conda install -q -y conda-build conda-verify anaconda-client
+      script:
+        - conda build . --user $USERNAME --token $CONDA_TOKEN --python $TRAVIS_PYTHON_VERSION
 
-  - provider: script
-    script: bash recipe/deploy.sh
-    on:
-      tags: true
-      condition: $JOB = "tests"
+    - stage: deploy
+      env: PYPI_DEPLOY
+      install: true
+      script: true
+      deploy:
+        provider: pypi
+        server: https://test.pypi.org/legacy/
+        user: $USERNAME
+        password:
+          secure: 15qNERDqwRGYsT0O++eXBAimzsIjI+RLSBNtzV+V74q4Jv6bJwu9ZNeYr3BERs3vBiwTGkVVohGb72ok8wJvdGOrZDefDdhUL/LSoQaXB+m76g53uZQZT5mpMskMDhWYiAkNcGj8XT37DsA8r4ik3z7RRqsQDR2iQnH8r9iqxhU33FOSfg0mDekRqw9aHKy030f5xiTwWg12ZYTjbrriOi/idXSjIEs/a6nEEJ1n6LoZsigVh0Hn4adIxljJ/IKRbRzN5BCgppoV7Qc5Tvqr+hTHPKjN306ZFFN3uF2vkGTkJRtg5uvcMDJAg/KjS7jVHDrqNbns/faFxNpPDckeGk067MUr880es8ah4sXGEyRyTSozwr8UVphiorHQDDfIC+bm9P96URe6Dfo2x3c16uvUwqcgH4IDfNoZEq3YBaKjC7quQukExl/f+nViUL+JUJWeeNoOicbocjd5862EoXdL9VHWLHTIJRAxzrBJd0uCi/Zv0R+kkXVMPCPlkYnyKQRnSOgvpjjnAhDNXT8wMvMxv8tBLNQjNRgxsknr9kgWQ1O1aRhDzJiki0dZ2pav56hMNnFVXyO90AsCfEtcQ35CYpvFdqhSuJvfSr/E5s41WUbMErSGhUz3Pny5ccgRb/GgRwuetxwVSJUmq0q7frfqNsa/NjwhvC3e1yAK2Gg=
+        distributions: sdist bdist_wheel
 
-  - provider: releases
-    name: Version $TRAVIS_TAG
-    api_key:
-      secure: G4oM7U54hyXF4JBmSB1Jf6gwiCQVFoXS/PGMT9AwqWqoY0VcNTc6IQM0Wn1tkPa0zsbUbSC3M3PtLHBD1mlAvyAYiUHVEbkarRq2cF3SfnDeqcCDv/D8mfymfTDJMCcvcHbhMu2qTLEswNWtaQ+qK9NOEb6db9N4HhAzzU8tMgimyTnk3/wvgmk6k8gR1bq718vDWA5YuYX7AXI3oaeozpAFIIEWT4OumVhTGTlsILkMAeTmxp/ValoT9+BHVaPXYEqKmBL6n3rAtl3WU53SVM3T3cEScDqqkCbCjm7etty2dqP/aJwFaIYx7WXvYfxy4PWbCJsveF172+xH8wEF+sGc/ts/Rygc+OSE7gYjoyvKhsD41D5rqmlxP0UNiMSI5CdNLQHe59clEUHeTxKvQWQ1FsVoFJWmfwFH/M8kIG2T7P3WppJBxik8pposa7+sn+ehdJCQ5P3MvRlR0PVrXO5XB6PlkmvwhGf0t88fRaFt7A3xXivUmbXAfthKL3tFBmPrbIiYW5Fh/dbyI/IUr8/8x0jo5uJjUpcuYSvXOqzcpaJJ6OSfM28sLdf1OYZtZdTCXWMZYZ9IqffccLbAoyaTY/JH6LdbJDZHcUjxhyypjEuBX8YeJQmJpSYxyKbDiQi5/ImwV1mwwIJLwgfSHJRsUtxjCbZE5sGMvhodnF4=
-    skip-cleanup: true
-    on:
-      tags: true
-      condition: $JOB = "docs"
+    - stage: deploy
+      env: GITHUB_RELEASE_DEPLOY
+      install: true
+      script: true
+      deploy:
+        provider: releases
+        name: Version $TRAVIS_TAG
+        api_key:
+          secure: G4oM7U54hyXF4JBmSB1Jf6gwiCQVFoXS/PGMT9AwqWqoY0VcNTc6IQM0Wn1tkPa0zsbUbSC3M3PtLHBD1mlAvyAYiUHVEbkarRq2cF3SfnDeqcCDv/D8mfymfTDJMCcvcHbhMu2qTLEswNWtaQ+qK9NOEb6db9N4HhAzzU8tMgimyTnk3/wvgmk6k8gR1bq718vDWA5YuYX7AXI3oaeozpAFIIEWT4OumVhTGTlsILkMAeTmxp/ValoT9+BHVaPXYEqKmBL6n3rAtl3WU53SVM3T3cEScDqqkCbCjm7etty2dqP/aJwFaIYx7WXvYfxy4PWbCJsveF172+xH8wEF+sGc/ts/Rygc+OSE7gYjoyvKhsD41D5rqmlxP0UNiMSI5CdNLQHe59clEUHeTxKvQWQ1FsVoFJWmfwFH/M8kIG2T7P3WppJBxik8pposa7+sn+ehdJCQ5P3MvRlR0PVrXO5XB6PlkmvwhGf0t88fRaFt7A3xXivUmbXAfthKL3tFBmPrbIiYW5Fh/dbyI/IUr8/8x0jo5uJjUpcuYSvXOqzcpaJJ6OSfM28sLdf1OYZtZdTCXWMZYZ9IqffccLbAoyaTY/JH6LdbJDZHcUjxhyypjEuBX8YeJQmJpSYxyKbDiQi5/ImwV1mwwIJLwgfSHJRsUtxjCbZE5sGMvhodnF4=
 
-  - provider: pages
-    github-token:
-      secure: G4oM7U54hyXF4JBmSB1Jf6gwiCQVFoXS/PGMT9AwqWqoY0VcNTc6IQM0Wn1tkPa0zsbUbSC3M3PtLHBD1mlAvyAYiUHVEbkarRq2cF3SfnDeqcCDv/D8mfymfTDJMCcvcHbhMu2qTLEswNWtaQ+qK9NOEb6db9N4HhAzzU8tMgimyTnk3/wvgmk6k8gR1bq718vDWA5YuYX7AXI3oaeozpAFIIEWT4OumVhTGTlsILkMAeTmxp/ValoT9+BHVaPXYEqKmBL6n3rAtl3WU53SVM3T3cEScDqqkCbCjm7etty2dqP/aJwFaIYx7WXvYfxy4PWbCJsveF172+xH8wEF+sGc/ts/Rygc+OSE7gYjoyvKhsD41D5rqmlxP0UNiMSI5CdNLQHe59clEUHeTxKvQWQ1FsVoFJWmfwFH/M8kIG2T7P3WppJBxik8pposa7+sn+ehdJCQ5P3MvRlR0PVrXO5XB6PlkmvwhGf0t88fRaFt7A3xXivUmbXAfthKL3tFBmPrbIiYW5Fh/dbyI/IUr8/8x0jo5uJjUpcuYSvXOqzcpaJJ6OSfM28sLdf1OYZtZdTCXWMZYZ9IqffccLbAoyaTY/JH6LdbJDZHcUjxhyypjEuBX8YeJQmJpSYxyKbDiQi5/ImwV1mwwIJLwgfSHJRsUtxjCbZE5sGMvhodnF4=
-    keep-history: true
-    local-dir: .tox/docs/_build
-    skip-cleanup: true
-    on:
-      tags: true
-      condition: $JOB = "docs"
+    - stage: deploy
+      env: TOX_ENV=docs
+      install: true
+      script: test -d .tox/docs/_build || (echo 'Build docs not found' && exit 1)
+      deploy:
+        provider: pages
+        github-token:
+          secure: G4oM7U54hyXF4JBmSB1Jf6gwiCQVFoXS/PGMT9AwqWqoY0VcNTc6IQM0Wn1tkPa0zsbUbSC3M3PtLHBD1mlAvyAYiUHVEbkarRq2cF3SfnDeqcCDv/D8mfymfTDJMCcvcHbhMu2qTLEswNWtaQ+qK9NOEb6db9N4HhAzzU8tMgimyTnk3/wvgmk6k8gR1bq718vDWA5YuYX7AXI3oaeozpAFIIEWT4OumVhTGTlsILkMAeTmxp/ValoT9+BHVaPXYEqKmBL6n3rAtl3WU53SVM3T3cEScDqqkCbCjm7etty2dqP/aJwFaIYx7WXvYfxy4PWbCJsveF172+xH8wEF+sGc/ts/Rygc+OSE7gYjoyvKhsD41D5rqmlxP0UNiMSI5CdNLQHe59clEUHeTxKvQWQ1FsVoFJWmfwFH/M8kIG2T7P3WppJBxik8pposa7+sn+ehdJCQ5P3MvRlR0PVrXO5XB6PlkmvwhGf0t88fRaFt7A3xXivUmbXAfthKL3tFBmPrbIiYW5Fh/dbyI/IUr8/8x0jo5uJjUpcuYSvXOqzcpaJJ6OSfM28sLdf1OYZtZdTCXWMZYZ9IqffccLbAoyaTY/JH6LdbJDZHcUjxhyypjEuBX8YeJQmJpSYxyKbDiQi5/ImwV1mwwIJLwgfSHJRsUtxjCbZE5sGMvhodnF4=
+        keep-history: true
+        local-dir: .tox/docs/_build
+        skip-cleanup: true

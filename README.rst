@@ -85,6 +85,8 @@ See `tox.ini <tox.ini>`_ to configure:
   docstrings in ``foo`` module.
 - linter python files syntax (with `flake8`).
 
+See `meta.yaml <meta.yaml>`_ to configure Anaconda recipe.
+
 See `.readthedocs.yml <.readthedocs.yml>`_
 to configure `Read the Docs <https://test-python-docs.readthedocs.io/>`_ deployment.
 
@@ -96,12 +98,6 @@ See `.travis.yml <.travis.yml>`_ to configure CI tests and deployments to:
 - `Anaconda <https://anaconda.org/seignovert/foo-autodeploy>`_
 - `Github Releases <https://github.com/seignovert/test-python-docs/releases>`_
 - `Github Pages <https://seignovert.github.io/test-python-docs/>`_
-
-See `recipe/ <recipe/>`_ folder to configure:
-
-- `meta.yaml <recipe/meta.yaml>`_ of conda recipe.
-- `deploy.sh <recipe/deploy.sh>`_ to install miniconda3,
-  build and deploy from Travis-CI to Anaconda.
 
 See `.zenodo.json <.zenodo.json>`_ to configure
 `Zenodo <https://zenodo.org>`_ deployment, to get a DOI for each
