@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>CI/CD examples to test and deploy python packages from Github &mdash; Foo Autodeploy 2.2.0 documentation</title>
+  <title>CI/CD examples to test and deploy python packages from Github &mdash; Foo Autodeploy 2.3.0 documentation</title>
   
 
   
@@ -17,32 +17,34 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" /> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -56,7 +58,7 @@
             
             
               <div class="version">
-                2.2.0
+                2.3.0
               </div>
             
           
@@ -162,45 +164,45 @@
 <p><a class="reference external" href="https://github.com/seignovert/test-python-docs/"><img alt="License" src="https://img.shields.io/github/license/seignovert/test-python-docs.svg" /></a> <a class="reference external" href="https://sandbox.zenodo.org/badge/latestdoi/168057818"><img alt="DOI" src="https://sandbox.zenodo.org/badge/168057818.svg" /></a></p>
 <p>Python project to showcase how to hook Github with:</p>
 <ul class="simple">
-<li>Read the Docs</li>
-<li>Travis CI</li>
-<li>CodeCov</li>
-<li>Coveralls</li>
-<li>PyPI</li>
-<li>Anaconda</li>
-<li>Github Pages</li>
-<li>Github Releases</li>
-<li>Zenodo</li>
+<li><p>Read the Docs</p></li>
+<li><p>Travis CI</p></li>
+<li><p>CodeCov</p></li>
+<li><p>Coveralls</p></li>
+<li><p>PyPI</p></li>
+<li><p>Anaconda</p></li>
+<li><p>Github Pages</p></li>
+<li><p>Github Releases</p></li>
+<li><p>Zenodo</p></li>
 </ul>
 <p>See <a class="reference external" href="setup.cfg">setup.cfg</a> to configure:</p>
 <ul class="simple">
-<li>package description (name, author, url, files…).</li>
-<li>PyPI deploy settings.</li>
-<li>Pytest options.</li>
-<li>Coverage report settings.</li>
-<li>Linter settings.</li>
+<li><p>package description (name, author, url, files…).</p></li>
+<li><p>PyPI deploy settings.</p></li>
+<li><p>Pytest options.</p></li>
+<li><p>Coverage report settings.</p></li>
+<li><p>Linter settings.</p></li>
 </ul>
 <p>See <a class="reference external" href="tox.ini">tox.ini</a> to configure:</p>
 <ul class="simple">
-<li>module tests from <code class="docutils literal notranslate"><span class="pre">tests/</span></code> folder (with <cite>pytest</cite>).</li>
-<li>module coverage (from <cite>pytest</cite> output).</li>
-<li>documentation build from <code class="docutils literal notranslate"><span class="pre">docs/</span></code> folder (with <cite>sphinx</cite>,
-<cite>autodoc</cite> and <cite>napoleon</cite>).</li>
-<li>documentation tests from <code class="docutils literal notranslate"><span class="pre">docs/*.rst</span></code> files and
-docstrings in <code class="docutils literal notranslate"><span class="pre">foo</span></code> module.</li>
-<li>linter python files syntax (with <cite>flake8</cite>).</li>
+<li><p>module tests from <code class="docutils literal notranslate"><span class="pre">tests/</span></code> folder (with <cite>pytest</cite>).</p></li>
+<li><p>module coverage (from <cite>pytest</cite> output).</p></li>
+<li><p>documentation build from <code class="docutils literal notranslate"><span class="pre">docs/</span></code> folder (with <cite>sphinx</cite>,
+<cite>autodoc</cite> and <cite>napoleon</cite>).</p></li>
+<li><p>documentation tests from <code class="docutils literal notranslate"><span class="pre">docs/*.rst</span></code> files and
+docstrings in <code class="docutils literal notranslate"><span class="pre">foo</span></code> module.</p></li>
+<li><p>linter python files syntax (with <cite>flake8</cite>).</p></li>
 </ul>
 <p>See <a class="reference external" href="meta.yaml">meta.yaml</a> to configure Anaconda recipe.</p>
 <p>See <a class="reference external" href=".readthedocs.yml">.readthedocs.yml</a>
 to configure <a class="reference external" href="https://test-python-docs.readthedocs.io/">Read the Docs</a> deployment.</p>
 <p>See <a class="reference external" href=".travis.yml">.travis.yml</a> to configure CI tests and deployments to:</p>
 <ul class="simple">
-<li><a class="reference external" href="https://codecov.io/gh/seignovert/test-python-docs">Codecov</a></li>
-<li><a class="reference external" href="https://coveralls.io/github/seignovert/test-python-docs">Coveralls</a></li>
-<li><a class="reference external" href="https://test.pypi.org/project/foo-autodeploy/">PyPI (test)</a></li>
-<li><a class="reference external" href="https://anaconda.org/seignovert/foo-autodeploy">Anaconda</a></li>
-<li><a class="reference external" href="https://github.com/seignovert/test-python-docs/releases">Github Releases</a></li>
-<li><a class="reference external" href="https://seignovert.github.io/test-python-docs/">Github Pages</a></li>
+<li><p><a class="reference external" href="https://codecov.io/gh/seignovert/test-python-docs">Codecov</a></p></li>
+<li><p><a class="reference external" href="https://coveralls.io/github/seignovert/test-python-docs">Coveralls</a></p></li>
+<li><p><a class="reference external" href="https://test.pypi.org/project/foo-autodeploy/">PyPI (test)</a></p></li>
+<li><p><a class="reference external" href="https://anaconda.org/seignovert/foo-autodeploy">Anaconda</a></p></li>
+<li><p><a class="reference external" href="https://github.com/seignovert/test-python-docs/releases">Github Releases</a></p></li>
+<li><p><a class="reference external" href="https://seignovert.github.io/test-python-docs/">Github Pages</a></p></li>
 </ul>
 <p>See <a class="reference external" href=".zenodo.json">.zenodo.json</a> to configure
 <a class="reference external" href="https://zenodo.org">Zenodo</a> deployment, to get a DOI for each
@@ -212,11 +214,11 @@ is not valid but the record can be found
 <div class="section" id="sphinx-autobuild-tip">
 <h2>Sphinx autobuild (tip)<a class="headerlink" href="#sphinx-autobuild-tip" title="Permalink to this headline">¶</a></h2>
 <p>Install:</p>
-<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install sphinx-autobuild
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install sphinx-autobuild
 </pre></div>
 </div>
 <p>Start autobuild (with live reload):</p>
-<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd docs ; make livehtml
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> docs <span class="p">;</span> make livehtml
 </pre></div>
 </div>
 </div>
@@ -240,18 +242,17 @@ is not valid but the record can be found
 <dt id="foo.foo">
 <code class="descclassname">foo.</code><code class="descname">foo</code><span class="sig-paren">(</span><em>dummy</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/foo.html#foo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#foo.foo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Foo function.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dummy</strong> (<em>str</em>) – Dummy parameter</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Foo string</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">str</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dummy</strong> (<em>str</em>) – Dummy parameter</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Foo string</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <p>Examples should be written in doctest format, and should illustrate how
 to use the function.</p>
@@ -260,8 +261,8 @@ to use the function.</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Test note in docstring</p>
+<p class="admonition-title">Note</p>
+<p>Test note in docstring</p>
 </div>
 </dd></dl>
 
@@ -296,26 +297,16 @@ to use the function.</p>
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>
